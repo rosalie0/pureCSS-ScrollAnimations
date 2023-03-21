@@ -16,3 +16,31 @@ section {
 }
 
 /* CSS FOR ANIMATIONS */
+/* .basic-hidden {
+  opacity: 0;
+  transition: all 5s;
+} */
+/* .basic-show {
+  opacity: 1;
+} */
+
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+/* styles to apply if the user's settings 
+  are set to reduced motion for accessibility reasons, usually */
+@media (prefers-reduced-motion) {
+  .hidden {
+    /* overwrite the other transition effect with none */
+    transition: none;
+  }
+}
